@@ -1,0 +1,16 @@
+{
+  "name": "Gestão Rebanho Pro",
+  "short_name": "Rebanho Pro",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#073a25",
+  "theme_color": "#073a25",
+  "icons": [
+    {
+      "src": "imagens/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
