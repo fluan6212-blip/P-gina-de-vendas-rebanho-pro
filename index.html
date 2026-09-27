@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<!-- Meta Pixel Code - Gestão Rebanho Pro -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '874619305736463');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#073a25"><meta name="description" content="Gestão Rebanho Pro: organize rebanho, produção, entregas e financeiro no celular ou computador.">
 <title>Gestão Rebanho Pro | Gestão simples do seu rebanho</title>
@@ -12,6 +26,8 @@
 </style>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=874619305736463&ev=PageView&noscript=1"/></noscript>
 <header class="nav"><div class="wrap navin"><a class="brand" href="#top"><img src="logo.jpg" alt="Logo Gestão Rebanho Pro"><span><b>GESTÃO<br>REBANHO PRO</b><small>Gestão simples do seu rebanho</small></span></a><button class="hamb" onclick="document.querySelector('.links').classList.toggle('open')">☰</button><nav class="links"><a href="#recursos">Recursos</a><a href="#telas">Telas reais</a><a href="#web">Computador</a><a href="#começar">Como começar</a><a href="#tutoriais">Tutoriais</a><a href="#campanha">Campanha</a><a href="#faq">FAQ</a><a class="pill app" href="https://fluan6212-blip.github.io/Gest-o-inovada/">✦ Abrir aplicativo</a><a class="pill whats" href="https://wa.me/554298508930">◌ WhatsApp</a></nav></div></header>
 <main id="top">
 <section class="hero"><div class="wrap heroin"><div class="copy"><span class="tag">✦ Feito para a rotina do produtor</span><h1>Pare de se perder<br><em>nas anotações</em><br>do rebanho.</h1><p>Cadastre seus animais, acompanhe partos e inseminações, registre a produção e consulte entregas, gastos e históricos pelo celular ou computador.</p><div class="actions"><a class="btn lime" href="https://fluan6212-blip.github.io/Gest-o-inovada/">✦ Ativar meu acesso gratuito</a><a class="btn outline" href="#telas">Ver o app por dentro →</a></div><div class="hero-proof">✓ Sem limite de animais　 ✓ Modo Web incluído</div><p style="font-size:11px;color:#ffffffc9;margin-top:10px">Crie sua conta em menos de 1 minuto. O cadastro é necessário para ativar seu acesso e salvar os dados do rebanho.</p></div><div><div class="device"><img src="dashboard.jpg" alt="Dashboard real do aplicativo"></div><div class="float"><span>▥</span><span><b>Visão rápida</b><small>Indicadores da atividade leiteira</small></span></div></div></div></section>
@@ -30,4 +46,38 @@
 <script>
 const slider=document.getElementById('slider'),dots=[...document.querySelectorAll('.dots button')];let slide=0;function go(i){slide=i;slider.scrollTo({left:i*slider.clientWidth,behavior:'smooth'});dots.forEach((d,n)=>d.classList.toggle('on',n===i));document.getElementById('count').textContent=String(i+1).padStart(2,'0')+' / 04'}function move(n){go((slide+n+4)%4)}slider.addEventListener('scroll',()=>{const i=Math.round(slider.scrollLeft/slider.clientWidth);if(i!==slide){slide=i;go(i)}});
 const APP='https://fluan6212-blip.github.io/Gest-o-inovada/';const KEY='sb_publishable_05-hot_9ib3at1_lVp2tlg_45TPeHZx';const API='https://kympffzpwvzdkkcsayoj.supabase.co/rest/v1/rpc/status_publico_pagina_vendas';const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});let offerTimer=null;function setOffer(s){if(offerTimer){clearInterval(offerTimer);offerTimer=null}const left=Number(s?.vagas_restantes||0),stamp=s?.vagas_encerradas_em?new Date(s.vagas_encerradas_em).getTime():NaN,now=Date.now(),elapsed=Number.isFinite(stamp)?Math.max(0,(now-stamp)/864e5):0;let title='Gestão completa por R$ 97,90 ao ano',text='Acesso ao Gestão Rebanho Pro, sem limite de animais, em até 6x no cartão.',price='R$ 97,90 / ano',button='Abrir aplicativo',url=APP,status='Condição normal disponível.';document.getElementById('slots').innerHTML='';if(s?.campanha_ativa&&left>0){title='Acesso gratuito vitalício';text='Você pode testar o aplicativo tranquilamente. As primeiras pessoas dentro da condição inicial recebem acesso gratuito vitalício, sem limite de animais.';price='Grátis';button='Garantir meu acesso';url=APP;status='Vagas da condição inicial disponíveis.';document.getElementById('slots').innerHTML='<b style="color:#073a25">🎁 '+left+' vaga(s) restante(s)</b>'}else if(s?.campanha_ativa&&Number.isFinite(stamp)&&elapsed<6){title='60% de desconto por tempo limitado';text='Você pode testar o aplicativo tranquilamente. Se decidir continuar, aproveite a condição promocional enquanto ela estiver ativa. A compra é feita dentro do aplicativo, em Configurações.';price=money(97.9*.4);button='Abrir aplicativo';status='60% OFF na etapa atual.';document.getElementById('slots').innerHTML='<div id="offerCountdown" style="margin-top:14px;font-weight:800;color:#cf6b1f">⏳ Condição promocional termina em: <span>--</span></div>'}else if(s?.campanha_ativa&&Number.isFinite(stamp)&&elapsed<9){title='40% de desconto por tempo limitado';text='Você pode testar o aplicativo tranquilamente. Se decidir continuar, aproveite a condição promocional enquanto ela estiver ativa. A compra é feita dentro do aplicativo, em Configurações.';price=money(97.9*.6);button='Abrir aplicativo';status='40% OFF na etapa atual.';document.getElementById('slots').innerHTML='<div id="offerCountdown" style="margin-top:14px;font-weight:800;color:#cf6b1f">⏳ Condição promocional termina em: <span>--</span></div>'}document.getElementById('offerTitle').textContent=title;document.getElementById('offerText').textContent=text;document.getElementById('offerPrice').textContent=price;document.getElementById('offerButton').textContent=button;document.getElementById('offerButton').href=url;document.getElementById('offerStatusText').textContent=status;if(Number.isFinite(stamp)&&elapsed<9&&left<=0){const duration=elapsed<6?6*864e5:9*864e5;const target=stamp+duration;const tick=()=>{const ms=Math.max(0,target-Date.now()),d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4),sec=Math.floor(ms%6e4/1e3),el=document.querySelector('#offerCountdown span');if(el)el.textContent=d+'d '+String(h).padStart(2,'0')+'h '+String(m).padStart(2,'0')+'m '+String(sec).padStart(2,'0')+'s';if(ms<=0){clearInterval(offerTimer);offerTimer=null}};tick();offerTimer=setInterval(tick,1000)}}fetch(API,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json','Content-Profile':'public'},body:'{}'}).then(r=>r.json()).then(x=>{setOffer(Array.isArray(x)?x[0]:x)}).catch(()=>{document.getElementById('offerTitle').textContent='Consulte a condição ao abrir o aplicativo';document.getElementById('offerPrice').textContent='R$ 97,90 / ano';document.getElementById('offerButton').textContent='Abrir aplicativo';document.getElementById('offerButton').href=APP;document.getElementById('offerStatusText').textContent='Não foi possível atualizar o status agora.'});
+
+/* Meta Pixel — eventos da página de vendas */
+(function(){
+  if(typeof window.fbq!=='function') return;
+  const APP_URL='https://fluan6212-blip.github.io/Gest-o-inovada/';
+  const sentScrollMarks=new Set();
+  document.addEventListener('click',function(e){
+    const link=e.target.closest('a[href]');
+    if(!link) return;
+    const href=link.href||'';
+    const text=(link.textContent||'').trim().replace(/\s+/g,' ');
+    if(href===APP_URL || href.startsWith(APP_URL+'?') || href.startsWith(APP_URL+'#')){
+      window.fbq('trackCustom','ClickApp',{button_text:text||'Abrir aplicativo',destination:'app'});
+    }
+    if(href.includes('wa.me/')){
+      window.fbq('trackCustom','ClickWhatsApp',{button_text:text||'WhatsApp',destination:'whatsapp'});
+    }
+  });
+  function checkScrollDepth(){
+    const doc=document.documentElement;
+    const maxScroll=doc.scrollHeight-window.innerHeight;
+    if(maxScroll<=0) return;
+    const percent=Math.round((window.scrollY/maxScroll)*100);
+    [25,50,75,90].forEach(function(mark){
+      if(percent>=mark&&!sentScrollMarks.has(mark)){
+        sentScrollMarks.add(mark);
+        window.fbq('trackCustom','ScrollDepth',{depth_percent:mark});
+      }
+    });
+  }
+  window.addEventListener('scroll',checkScrollDepth,{passive:true});
+  window.addEventListener('load',checkScrollDepth);
+})();
+
 </script></body></html>
